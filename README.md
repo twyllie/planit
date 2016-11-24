@@ -3,9 +3,9 @@
 Shared to-do/group-scheduling web-app
 
 
-#Road Map:
+# Road Map:
 
--Establish basic functionality:
+- Establish basic functionality:
 	~Users can sign-up
 	~Groups can be started
 	~Users can be managed in groups
@@ -13,7 +13,7 @@ Shared to-do/group-scheduling web-app
 	~Groups have calendars
 	~Calendars have events
 	
--Down the line:
+- Down the line:
 	~Google calendar connectivity
 	~Facebook events connectivity
 	~Ability to start Projects
