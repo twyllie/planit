@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+
+	<head th:replace= "template :: head">
+	</head>
+
+	<body>
+		<header id="exterior-header">
+			<h1>planit</h1>
+		</header>
+		
+		<nav>
+			<ul>
+				<li><a href= "/">home</a></li>
+				<li><a href= "/login">login</a></li>
+			</ul>
+		</nav>
+		
+		<section>
+			<p>You have been successfully signed out.</p>
+		</section>
+		
+		
+		
+		<div th:replace= "template :: foot"></div>
+	
+	</body>
+
+</html>
