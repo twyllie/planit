@@ -1,5 +1,10 @@
 package io.planit.models;
 
-public class Project {
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "project")
+public class Project extends AbstractEntity{
 
 }
