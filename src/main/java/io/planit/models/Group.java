@@ -25,7 +25,7 @@ public class Group extends AbstractEntity{
 	
 	
 	//TODO: Figure out bi-directional manytomany
-	@ManyToMany
+	@ManyToMany(mappedBy = "groups")
 	private List<User> participants;
 	
 	
@@ -57,5 +57,93 @@ public class Group extends AbstractEntity{
 	@OneToMany
 	@JoinColumn(name = "message_id")
 	private List<Message> messages;
+	
+	
+	
+	public Group(){}
+	
+	
+	
+	public Group(User author, String title){
+		
+		super();
+		
+		
+		this.admins.add(author);
+		this.participants.add(author);
+		this.title = title;
+	}
+	
+	
+	
+	public String getTitle(){
+		return this.title;
+	}
+	public void setTitle(String title){
+		this.title = title;
+	}
+	
+	
+	
+	public List<User> getAdmins(){
+		return this.admins;
+	}
+	public void setAdmins(List<User> admins){
+		this.admins = admins;
+	}
+	
+	
+	
+	public List<User> getParticipants(){
+		return this.participants;
+	}
+	public void setParticipants(List<User> participants){
+		this.participants = participants;
+	}
+	
+	
+	
+	public List<Event> getEvents(){
+		return this.events;
+	}
+	public void setEvents(List<Event> events){
+		this.events = events;
+	}
+	
+	
+	
+	public List<Project> getProjects(){
+		return this.projects;
+	}
+	public void setProjects(List<Project> projects){
+		this.projects = projects;
+	}
+	
+	
+	
+	public List<Note> getNotes(){
+		return this.notes;
+	}
+	public void setNotes(List<Note> notes){
+		this.notes = notes;
+	}
+	
+	
+	
+	public List<Task> getTasks(){
+		return this.tasks;
+	}
+	public void setTasks(List<Task> tasks){
+		this.tasks = tasks;
+	}
+	
+	
+	
+	public List<Message> getMessages(){
+		return this.messages;
+	}
+	public void setMessages(List<Message> messages){
+		this.messages = messages;
+	}
 
 }
