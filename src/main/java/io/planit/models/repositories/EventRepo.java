@@ -5,12 +5,12 @@ import javax.transaction.Transactional;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import io.planit.models.User;
+import io.planit.models.Event;
 
 @Transactional
 @Repository
-public interface UserRepo extends CrudRepository<User, Integer>{
+public interface EventRepo extends CrudRepository<Event, Integer>{
 
+	Event findByUid(int uid);
 	
-	User findByUid(int uid);
 }
