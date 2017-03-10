@@ -12,6 +12,10 @@ public class Note extends AbstractEntity{
 
 	
 	
+	@Column(name = "personal")
+	private boolean personal;
+	
+	
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User author;
@@ -28,17 +32,27 @@ public class Note extends AbstractEntity{
 	
 	
 	
-	public Note(){}
+	protected Note(){}
 	
 	
 	
-	public Note(User author, String title, String body){
+	public Note(User author, String title, String body, boolean personal){
 		
 		super();
 		
 		this.author = author;
 		this.title = title;
 		this.body = body;
+		this.personal = personal;
+	}
+	
+	
+	
+	public boolean getPersonal(){
+		return this.personal;
+	}
+	public void setPersonal(boolean personal){
+		this.personal = personal;
 	}
 	
 	

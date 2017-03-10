@@ -14,6 +14,11 @@ public class Event extends AbstractEntity {
 	
 	
 	
+	@Column(name = "personal")
+	private boolean personal;
+	
+	
+	
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User author;
@@ -35,11 +40,11 @@ public class Event extends AbstractEntity {
 	
 	
 	
-	public Event(){}
+	protected Event(){}
 	
 	
 	
-	public Event(User author, String title, String description, Date date){
+	public Event(User author, String title, String description, Date date, boolean personal){
 		
 		super();
 		
@@ -47,6 +52,16 @@ public class Event extends AbstractEntity {
 		this.title = title;
 		this.description = description;
 		this.date = date;
+		this.personal = personal;
+	}
+	
+	
+	
+	public boolean getPersonal(){
+		return this.personal;
+	}
+	public void setPersonal(boolean personal){
+		this.personal = personal;
 	}
 	
 	

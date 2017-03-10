@@ -1,5 +1,6 @@
 package io.planit.models;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -30,6 +31,11 @@ public class User extends AbstractEntity{
 	
 	
 	
+	@Column(name = "last_login")
+	private Date lastLogin;
+	
+	
+	
 	@OneToMany
 	@JoinColumn(name = "event_id")
 	private List<Event> events;
@@ -41,7 +47,7 @@ public class User extends AbstractEntity{
 	private List<Message> messages;
 	
 	
-	//TODO: Figure out bi-directional manytomany
+	
 	@ManyToMany
 	private List<Group> groups;
 	
@@ -89,6 +95,15 @@ public class User extends AbstractEntity{
 	
 	
 	
+	public Date getLastLogin(){
+		return this.lastLogin;
+	}
+	public void setLastLogin(Date lastLogin){
+		this.lastLogin = lastLogin;
+	}
+	
+	
+	
 	public List<Event> getEvents(){
 		return this.events;
 	}
@@ -112,6 +127,12 @@ public class User extends AbstractEntity{
 	}
 	public void setGroups(List<Group> groups){
 		this.groups = groups;
+	}
+	
+	
+	
+	public void userLogin(){
+		this.lastLogin = new Date();
 	}
 
 }

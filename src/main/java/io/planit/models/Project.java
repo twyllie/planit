@@ -13,8 +13,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "project")
 public class Project extends AbstractEntity{
-
 	
+	
+	
+	@Column(name = "personal")
+	private boolean personal;
+
 	
 	
 	@ManyToOne
@@ -51,16 +55,26 @@ public class Project extends AbstractEntity{
 	
 	
 	
-	public Project(){}
+	protected Project(){}
 	
 	
 	
-	public Project(User author, String title){
+	public Project(User author, String title, boolean personal){
 		
 		super();
 		
 		this.author = author;
 		this.title = title;
+		this.personal = personal;
+	}
+	
+	
+	
+	public boolean getPersonal(){
+		return this.personal;
+	}
+	public void setPersonal(boolean personal){
+		this.personal = personal;
 	}
 	
 	

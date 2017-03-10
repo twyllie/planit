@@ -29,7 +29,7 @@ public class Message extends AbstractEntity{
 	
 	
 	
-	public Message(){}
+	protected Message(){}
 	
 	
 	

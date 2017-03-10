@@ -12,6 +12,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "task")
 public class Task extends AbstractEntity{
+	
+	
+	
+	@Column(name = "personal")
+	private boolean personal;
 
 	
 	
@@ -45,13 +50,23 @@ public class Task extends AbstractEntity{
 	
 	
 	
-	public Task(User author, String title, String body){
+	public Task(User author, String title, String body, boolean personal){
 		
 		super();
 		
 		this.author = author;
 		this.title = title;
 		this.body = body;
+		this.personal = personal;
+	}
+	
+	
+	
+	public boolean getPersonal(){
+		return this.personal;
+	}
+	public void setPersonal(boolean personal){
+		this.personal = personal;
 	}
 	
 	

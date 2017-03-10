@@ -15,6 +15,11 @@ public class Group extends AbstractEntity{
 	
 	
 	
+	@Column(name = "personal")
+	private boolean personal;
+	
+	
+	
 	@Column(name = "title")
 	private String title;
 	
@@ -24,7 +29,7 @@ public class Group extends AbstractEntity{
 	private List<User> admins;
 	
 	
-	//TODO: Figure out bi-directional manytomany
+	
 	@ManyToMany(mappedBy = "groups")
 	private List<User> participants;
 	
@@ -60,11 +65,11 @@ public class Group extends AbstractEntity{
 	
 	
 	
-	public Group(){}
+	protected Group(){}
 	
 	
 	
-	public Group(User author, String title){
+	public Group(User author, String title, boolean personal){
 		
 		super();
 		
@@ -72,6 +77,16 @@ public class Group extends AbstractEntity{
 		this.admins.add(author);
 		this.participants.add(author);
 		this.title = title;
+		this.personal = personal;
+	}
+	
+	
+	
+	public boolean getPersonal(){
+		return this.personal;
+	}
+	public void setPersonal(boolean personal){
+		this.personal = personal;
 	}
 	
 	
